@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 10px; /* 初始大小 */
+            user-select: none;
+            animation: grow 2s ease-out forwards;
+        }
+        @keyframes grow {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(10); /* 最终大小 */
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart" id="heart">❤️</div>
+    <script>
+        function createHeart() {
+            const heart = document.getElementById("heart");
+            heart.style.display = "block"; // 显示爱心
+        }
+
+        // 点击页面触发爱心动画
+        document.addEventListener("click", () => {
+            createHeart();
+        });
+
+        // 页面加载后自动触发（可选）
+        window.onload = createHeart;
+    </script>
+</body>
+</html>
